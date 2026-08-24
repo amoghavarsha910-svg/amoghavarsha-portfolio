@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #050508;
+    --card: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+    --accent: #00f2ff;
+    --accent-alt: #7000ff;
+    --text: #f0f0f0;
+    --text-dim: #a0a0a0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.03em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Bold Typography Radial Grid background */
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 10%, rgba(0, 242, 255, 0.08) 0%, rgba(112, 0, 255, 0.06) 35%, transparent 75%);
+}
+
+/* Glass Panels with bold borders */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 242, 255, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(0, 242, 255, 0.2);
+}
+
+/* Bold Section Title Header */
+.section-title-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+.section-title-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0, 242, 255, 0.4), rgba(255, 255, 255, 0.08), transparent);
+}
+
+/* Gradient accents */
+.text-gradient-bold {
+  background: linear-gradient(to right, #00f2ff, #7000ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(to right, #00f2ff, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary-bold {
+  background: #00f2ff;
+  color: #050508;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 0 20px -3px rgba(0, 242, 255, 0.4);
+  transition: all 0.2s ease;
+}
+.btn-primary-bold:hover {
+  background: #38bdf8;
+  box-shadow: 0 0 25px rgba(0, 242, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-outline-bold {
+  background: transparent;
+  color: #f0f0f0;
+  border: 1px solid rgba(0, 242, 255, 0.5);
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+.btn-outline-bold:hover {
+  background: rgba(0, 242, 255, 0.1);
+  border-color: #00f2ff;
+  color: #00f2ff;
+  transform: translateY(-1px);
+}
+
+/* Skill and tech tag pills */
+.skill-tag-bold {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+.skill-tag-bold:hover {
+  border-color: rgba(0, 242, 255, 0.5);
+  background: rgba(0, 242, 255, 0.08);
+  color: #00f2ff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 242, 255, 0.5);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
