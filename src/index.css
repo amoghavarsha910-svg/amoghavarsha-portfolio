@@ -409,3 +409,29 @@ body{font-family:Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;color:#20211e
 .project-copy>p{font-size:19px;line-height:1.6;color:#353731;font-weight:500;max-width:42ch}
 @media(max-width:900px){.project-copy>p{font-size:18px}}
 @media(max-width:650px){.project-copy>p{font-size:17px;line-height:1.6}}
+
+/* Keep the complete hero name inside its text column */
+.hero-copy{min-width:0}
+.hero h1{max-width:100%;font-size:clamp(58px,7vw,112px);white-space:normal;overflow-wrap:normal;letter-spacing:-.105em}
+@media(max-width:900px){.hero h1{font-size:clamp(56px,7vw,72px)}}
+@media(max-width:650px){.hero h1{font-size:clamp(38px,9.5vw,58px);line-height:.88;white-space:normal}}
+
+/* Size the display name against its own column to prevent portrait overlap */
+.hero-copy{container-type:inline-size;min-width:0}
+.hero h1{font-size:clamp(38px,10cqw,120px);max-width:100%;white-space:normal;overflow-wrap:normal;line-height:.82}
+
+/* Keep the hero title and portrait in independent, responsive columns */
+.hero{grid-template-columns:minmax(0,1.4fr) minmax(280px,.8fr);column-gap:clamp(24px,3.5vw,54px)}
+.hero-copy{grid-column:1;grid-row:1;min-width:0;width:100%;container-type:inline-size}
+.hero-photo-wrap{grid-column:2;grid-row:1;min-width:0;width:100%;max-width:100%;justify-self:stretch}
+.hero h1{display:block;width:100%;max-width:100%;font-size:clamp(40px,10cqw,120px);line-height:.84;white-space:normal;overflow-wrap:normal;word-break:normal;letter-spacing:-.095em}
+@media(max-width:900px) and (min-width:651px){
+  .hero{grid-template-columns:minmax(0,1.35fr) minmax(240px,.85fr);column-gap:clamp(20px,3vw,30px)}
+  .hero h1{font-size:clamp(38px,10cqw,76px)}
+}
+@media(max-width:650px){
+  .hero{display:flex;flex-direction:column;align-items:stretch;gap:22px}
+  .hero-copy{grid-column:auto;grid-row:auto;width:100%}
+  .hero h1{font-size:clamp(30px,9.5cqw,60px);line-height:.88}
+  .hero-photo-wrap{grid-column:auto;grid-row:auto;width:88%;max-width:100%;align-self:flex-end}
+}
