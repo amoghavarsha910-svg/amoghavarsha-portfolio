@@ -1,20 +1,61 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Amoghavarsha K A — Portfolio
 
-# Run and deploy your AI Studio app
+Personal portfolio website built with React and TypeScript.
 
-This contains everything you need to run your app locally.
+## Overview
 
-View your app in AI Studio: https://ai.studio/apps/fb2a44aa-c11f-4d6f-8e63-d58e487e344f
+An editorial portfolio presenting Amoghavarsha K A, a Computer Science & Engineering student at Alva's Institute of Engineering and Technology. It features selected project work, education, capabilities, personal photography, and direct contact links.
 
-## Run Locally
+## Features
 
-**Prerequisites:**  Node.js
+- Responsive layout for desktop and mobile
+- Selected project presentations and technology tags
+- About, capabilities, education, learning focus, and personal photo sections
+- Email, GitHub, and resume links
+- SEO metadata, Open Graph tags, and a custom favicon
+- Reduced-motion support
 
+## Tech stack
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- React 19
+- TypeScript
+- Vite
+- CSS
+- Lucide React icons
+
+## Project structure
+
+```text
+public/
+  favicon.svg
+  images/                 Personal photographs
+src/
+  App.tsx                 Page sections and layout
+  data/portfolio.ts       Central portfolio content
+  index.css               Responsive design system
+  main.tsx                Application entry point
+```
+
+## Local setup
+
+Requires Node.js 20 or later.
+
+```bash
+npm install
+npm run dev
+```
+
+Vite prints the local development URL in the terminal.
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+The production site is generated in `dist/`.
+
+## Deployment
+
+Deploy the `dist/` directory to any static hosting provider that supports single-page Vite builds. Add `Amoghavarsha_K_A_Resume.pdf` to `public/` to enable the resume download link.
