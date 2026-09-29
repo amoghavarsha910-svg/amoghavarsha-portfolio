@@ -6,7 +6,7 @@ const p = portfolio.personal;
 const navLinks = [
   { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Capabilities', href: '#skills' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -82,14 +82,14 @@ function App() {
         <div className="about-grid reveal"><div className="about-photo-frame"><img src="/images/about-white.jpeg" alt="Amoghavarsha outdoors in a white shirt" loading="lazy" /><span className="photo-caption">A MOMENT BETWEEN CLASSES</span></div><div className="about-copy"><h3>Curious about how things work. Interested in making them work better.</h3><p>I'm Amoghavarsha K A, a Computer Science and Engineering student at Alva's Institute of Engineering and Technology. I enjoy building practical software, working with databases and web technologies, and exploring intelligent systems through hands-on projects.</p><p>I learn by building — taking ideas, understanding problems, and turning them into working solutions.</p><div className="about-location"><span>BASED IN</span><b>Shivamogga, Karnataka, India</b></div></div></div>
       </section>
 
-      <section className="education-section page-wrap" id="education">
-        <div className="section-intro reveal"><span className="eyebrow section-label"><span>05</span> / Education</span><h2 className="section-heading">Education<span className="heading-period">.</span></h2></div>
-        <article className="education-entry reveal"><div className="edu-main"><h3>{portfolio.education.institution}</h3><p>{portfolio.education.degree}</p></div><div className="edu-meta"><span>{portfolio.education.university}</span><span>{portfolio.education.status}</span></div><div className="edu-score"><span>CGPA</span><b>{portfolio.education.cgpa}</b></div></article>
-      </section>
-
       <section className="skills-section page-wrap" id="skills">
         <div className="section-intro reveal"><span className="eyebrow section-label"><span>04</span> / Capabilities</span><div className="section-heading-row"><h2>Capabilities<span className="heading-period">.</span></h2><p>Technologies I use across coursework, projects, and this portfolio.</p></div></div>
         <div className="capability-list reveal">{portfolio.skills.map(skillGroup => <article className="capability" key={skillGroup.number}><span className="cap-number">{skillGroup.number}</span><h3>{skillGroup.title}</h3><div className="cap-items">{skillGroup.items.map(item => <span key={item}>{item}</span>)}</div><ArrowUpRight className="cap-arrow" size={15} /></article>)}</div>
+      </section>
+
+      <section className="education-section page-wrap" id="education">
+        <div className="section-intro reveal"><span className="eyebrow section-label"><span>05</span> / Education</span><h2 className="section-heading">Education<span className="heading-period">.</span></h2></div>
+        <article className="education-entry reveal"><div className="edu-main"><h3>{portfolio.education.institution}</h3><p>{portfolio.education.degree}</p></div><div className="edu-meta"><span>{portfolio.education.university}</span><span>{portfolio.education.status}</span></div><div className="edu-score"><span>CGPA</span><b>{portfolio.education.cgpa}</b></div></article>
       </section>
 
       <section className="learning-section page-wrap" id="learning">
